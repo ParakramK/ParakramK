@@ -1,0 +1,51 @@
+name: Reset Main Branch History
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_date:
+        description: "Commit date (YYYY-MM-DD), defaults to 10 days ago"
+        required: false
+        type: string
+
+jobs:
+  reset-history:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Git config
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+
+      - name: Reset main branch
+        env:
+          INPUT_DATE: ${{ inputs.commit_date }}
+        run: |
+          # Use provided date, otherwise default to 10 days ago
+          if [ -n "$INPUT_DATE" ]; then
+            COMMIT_DATE="$INPUT_DATE"
+          else
+            COMMIT_DATE="$(date -d '10 days ago' '+%Y-%m-%d')"
+          fi
+
+          echo "Using commit date: $COMMIT_DATE"
+
+          git checkout --orphan new-main
+          git add -A
+
+          GIT_AUTHOR_DATE="$COMMIT_DATE 12:00:00" \
+          GIT_COMMITTER_DATE="$COMMIT_DATE 12:00:00" \
+          git commit -m "Initial commit"
+
+          git branch -D main
+          git branch -m main
+
+          git push --force \
+            "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" \
+            main
