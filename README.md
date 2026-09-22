@@ -1,9 +1,19 @@
 <h1 align="center">Hi 👋, I'm Parakram</h1>
 <h3 align="center">An undergraduate student from Nepal</h3>
 <br>
-  
-- ⚡ Fun fact **I've got 99 problems, but my code ain't one. (Okay, maybe it's like 98 problems...)**
+<div align="center">
+  <img
+    src="https://github.githubassets.com/assets/mona-loading-dimmed-5da225352fd7.gif"
+    alt="loading"
+    width="400"
+    height="400"
+  />
 
+
+
+  
+ ⚡ Fun fact **I've got 99 problems, but my code ain't one. (Okay, maybe it's like 98 problems...)**
+</div>
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/parakramkharel" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="parakramkharel" height="30" width="40" /></a>
@@ -12,7 +22,7 @@
 <h3 align="left">Languages and Tools:</h3>
 <p align="center">
   <a href="https://go-skill-icons.vercel.app/">
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=arch,debian,git,python,github,docker,c,cpp,html,css,js,bootstrap,vscode,php,phpstorm&perline=5" />
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=arch,debian,git,python,github,docker,c,cpp,html,css,js,bootstrap,vscode,php,phpstorm,go,mongodb,mysql,sqlite,postgres&perline=5" />
   </a>
 </p>
 
